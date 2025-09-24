@@ -2,13 +2,13 @@ import React from 'react';
 import { useAppContext } from '../context/AppContext';
 import { useParams } from 'react-router-dom';
 import { categories } from '../assets/assets';
-import ProductCard from '../components/ProductCard'; // make sure this path is correct
+import ProductCard from '../components/ProductCard'; 
 
 const ProductCategory = () => {
   const { products } = useAppContext();
   const { category } = useParams();
 
-  // Find the category object based on URL
+  // Find the category object
   const searchCategory = categories.find(
     (item) => item.path.toLowerCase() === category
   );

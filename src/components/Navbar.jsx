@@ -1,4 +1,4 @@
-// components/Navbar.jsx
+
 import React, { useState, useEffect } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { assets } from '../assets/assets';
@@ -8,7 +8,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
 
-  //getCartItemCount 
+
   const { 
     user, 
     setUser, 
@@ -57,7 +57,7 @@ const Navbar = () => {
       {/* Cart */}
       <div onClick={() => navigate("/cart")} className="relative cursor-pointer">
         <img src={assets.nav_cart_icon} alt="Cart" className="w-6 opacity-80" />
-        <button className="absolute -top-2 -right-3 text-xs text-black bg-yellow-500 w-[18px] h-[18px] rounded-full">
+        <button className="absolute -top-2 -right-3 text-xs text-black bg-[#D5A06D] w-[18px] h-[18px] rounded-full">
           {getCartItemCount()}
         </button>
       </div>
@@ -67,7 +67,7 @@ const Navbar = () => {
         {!user ? (
           <button
             onClick={() => setShowUserLogin(true)}
-            className="cursor-pointer px-8 py-2 bg-yellow-500 hover:bg-yellow-400 transition text-black rounded-full"
+            className="cursor-pointer px-8 py-2 bg-[#D5A06D] hover:bg-yellow-400 transition text-black rounded-full"
           >
             Login
           </button>
@@ -82,9 +82,10 @@ const Navbar = () => {
         )}
       </div>
 
-      {/* Mobile Menu Toggle */}
+    
       <div className='flex items-center gap-6 sm:hidden'>
        
+       {/* mobile navigation menu*/}
       
       <button onClick={() => setOpen(!open)} aria-label="Menu" className="">
         <img src={assets.menu_icon} alt="Menu"/>

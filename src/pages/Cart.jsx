@@ -47,7 +47,7 @@ const Cart = () => {
             {/* Left Section */}
             <div className='flex-1 max-w-4xl'>
                 <h1 className="text-3xl font-medium mb-6">
-                    Shopping Cart <span className="text-sm text-indigo-500">Items - {getCartItemCount()} </span>
+                    Shopping Cart <span className="text-sm text-[#3B6255]">Items - {getCartItemCount()} </span>
                 </h1>
 
                 <div className="grid grid-cols-[2fr_1fr_1fr] text-gray-500 text-base font-medium pb-3">
@@ -98,7 +98,7 @@ const Cart = () => {
 
                 <button 
                     onClick={()=> {navigate("/products"); scrollTo(0,0)}} 
-                    className="group cursor-pointer flex items-center mt-8 gap-2 text-indigo-500 font-medium"
+                    className="group cursor-pointer flex items-center mt-8 gap-2 text-[#3B6255] font-medium"
                 >
                     <img className='group-hover:-translate-x-1 transition' src={assets.arrow_right_icon_colored} alt="arrow"/>
                     Continue Shopping
@@ -166,7 +166,7 @@ const Cart = () => {
 
                 <button 
                     onClick={placeOrder}
-                    className="w-full py-3 mt-6 cursor-pointer bg-indigo-500 text-white font-medium hover:bg-indigo-600 transition"
+                    className="w-full py-3 mt-6 cursor-pointer bg-[#D5A06D] text-white font-medium hover:bg-indigo-600 transition"
                 >
                     {paymentOption === "COD" ? "Place Order" : "Proceed to Checkout"}
                 </button>

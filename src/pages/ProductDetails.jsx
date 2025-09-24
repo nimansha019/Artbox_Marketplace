@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useAppContext } from "../context/AppContext";
 import { assets } from "../assets/assets";
-import ProductCard from "../components/ProductCard"; // ✅ Import your ProductCard
+import ProductCard from "../components/ProductCard"; 
 
 const ProductDetails = () => {
   const { products, navigate, currency, addToCart } = useAppContext();
@@ -112,7 +112,7 @@ const ProductDetails = () => {
                   addToCart(product._id);
                   navigate("/cart");
                 }}
-                className="w-full py-3.5 cursor-pointer font-medium bg-indigo-500 text-white hover:bg-indigo-600 transition"
+                className="w-full py-3.5 cursor-pointer font-medium bg-[#D5A06D] text-white hover:bg-[#BC8F8F] transition"
               >
                 Buy now
               </button>

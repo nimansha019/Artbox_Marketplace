@@ -1,20 +1,16 @@
 import React from 'react'
-import { assets } from '../assets/assets' // make sure you imported this
+import { assets } from '../assets/assets' 
 
 const InputField = () => {
   return <input type="text" />
+
+
 }
 
 const AddAddress = () => {
     const onSubmitHandler = async (e)=>{
         e.preventDefault();
     }
-
-
-
-
-
-
   return (
     <div className="mt-16 pb-16">
       <p className="text-2xl md:text-3xl text-gray-500">
@@ -26,16 +22,14 @@ const AddAddress = () => {
 
           <form onSubmit={onSubmitHandler}className='space-y-3 mt-6 text-sm'>
           <div>
-           <InputField/>
+           <InputField
+
+            
+           />
+
+
           </div>
-
-
-
           </form>
-
-
-
-        
         
         </div>
 

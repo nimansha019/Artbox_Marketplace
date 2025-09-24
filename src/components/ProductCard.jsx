@@ -52,7 +52,7 @@ const ProductCard = ({ product }) => {
         ) : (
           <button
             onClick={handleAddToCart}
-            className="px-4 py-2 bg-green-500 text-white rounded"
+            className="px-4 py-2 bg-[#D5A06D] text-white rounded"
           >
             Add to Cart
           </button>
