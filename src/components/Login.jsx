@@ -3,7 +3,7 @@ import { useAppContext } from '../context/AppContext';
 
 const login = () => {
 
-    const {setShowUserLogin,setUser}= useAppContext()
+    const {setShowUserLogin, login: loginUser, register: registerUser, loading}= useAppContext()
     const [state, setState] = React.useState("login");
     const [name, setName] = React.useState("");
     const [email, setEmail] = React.useState("");
@@ -11,12 +11,24 @@ const login = () => {
 
 const onSubmitHandler =async (event) => {
     event.preventDefault();
-    setUser({
-        name: "nimansha",
-        email: "nimansha@gmail.com"
 
-    })
-    setShowUserLogin (false)
+    try {
+        if (state === "login") {
+            await loginUser({ email, password });
+        } else {
+            await registerUser({ name, email, password });
+            // After successful registration, switch to login
+            setState("login");
+            setName("");
+        }
+        // Reset form
+        setEmail("");
+        setPassword("");
+        if (state === "register") setName("");
+    } catch (error) {
+        // Error is handled in the context with toast
+        console.error('Auth error:', error);
+    }
 }
 
 
@@ -49,8 +61,11 @@ const onSubmitHandler =async (event) => {
                     Create an account? <span onClick={() => setState("register")} className="text-indigo-500 cursor-pointer">click here</span>
                 </p>
             )}
-            <button className="bg-[#D5A06D] hover:bg-[#D5A06D] transition-all text-white w-full py-2 rounded-md cursor-pointer">
-                {state === "register" ? "Create Account" : "Login"}
+            <button
+                disabled={loading}
+                className="bg-[#D5A06D] hover:bg-[#D5A06D] transition-all text-white w-full py-2 rounded-md cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+                {loading ? "Please wait..." : (state === "register" ? "Create Account" : "Login")}
             </button>
         </form>
     </div>

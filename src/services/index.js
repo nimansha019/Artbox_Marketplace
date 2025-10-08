@@ -1,0 +1,9 @@
+export { userService } from './userService';
+export { productService } from './productService';
+export { cartService } from './cartService';
+export { orderService } from './orderService';
+export { addressService } from './addressService';
+export { categoryService } from './categoryService';
+export { newsletterService } from './newsletterService';
+export { analyticsService } from './analyticsService';
+export { paymentService } from './paymentService';

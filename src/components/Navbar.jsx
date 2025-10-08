@@ -40,6 +40,7 @@ const Navbar = () => {
       <div className="hidden sm:flex items-center gap-8">
         <NavLink to="/">Home</NavLink>
         <NavLink to="/products">All Products</NavLink>
+        <NavLink to="/admin/login">Admin</NavLink>
         <NavLink to="/">Contact</NavLink>
       </div>
 
@@ -97,6 +98,7 @@ const Navbar = () => {
         <div className="absolute top-[60px] left-0 w-full bg-white shadow-md py-4 flex flex-col items-start gap-2 px-5 text-sm md:hidden">
           <NavLink to="/" onClick={() => setOpen(false)}>Home</NavLink>
           <NavLink to="/products" onClick={() => setOpen(false)}>All Products</NavLink>
+          <NavLink to="/admin/login" onClick={() => setOpen(false)}>Admin</NavLink>
           {user && <NavLink to="/my-orders" onClick={() => setOpen(false)}>My Orders</NavLink>}
           <NavLink to="/" onClick={() => setOpen(false)}>Contact</NavLink>
 
